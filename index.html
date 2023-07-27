@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Zepto Apps Test</title>
+</head>
+<body class="bg-slate-200">
+    <div class="w-full p-3 flex">
+        <!-- components  -->
+        <div class="w-1/2 h-[850px] m-1 bg-transparent border rounded border-violet-700 static">
+            <div class="absolute top-2 lg:left-[60px] bg-white rounded lg:px-[300px] left-[40px] px-[80px] md:px-[40px] flex py-1">
+                    <span >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                        </svg>
+                    </span>
+                components
+            </div>
+            <div class="mt-[45px]">
+                <!-- heading panel  -->
+                <div class="relative mt-5 hidden" id="heading_div">
+                    <div class="static w-[95%] h-[200px] ml-2 mr-5 bg-transparent border rounded border-violet-700">
+                        <span class="absolute top-[-10px] left-10 text-center w-[100px] h-[30px] bg-slate-300 rounded">
+                            Heading
+                        </span>
+                        <span class="absolute top-[-10px] right-7 text-center w-[30px] h-[30px] bg-red-100 text-red-700 rounded-full cursor-pointer" onclick="headingCross()">x</span>
+                        <div class="p-5 mt-5">
+                            <input type="text" id="heading" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Dashboard">
+                            <div class="flex justify-between mt-5">
+                                <div class="inline-flex rounded-md shadow-sm" role="group">
+                                    <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-900 rounded-l-lg hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white" onclick="setTextAlign('text-left')">
+                                        left
+                                    </button>
+                                    <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white" onclick="setTextAlign('text-center')">
+                                        center
+                                    </button>
+                                    <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-900 rounded-r-md hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white" onclick="setTextAlign('text-right')">
+                                        right
+                                    </button>
+                                </div>
+        
+        
+                                <div class="inline-flex rounded-md shadow-sm" role="group">
+                                    <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-900 rounded-l-lg hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white" onclick="setTextColor('text-blue-700')">
+                                        blue
+                                    </button>
+                                    <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white" onclick="setTextColor('text-black')">
+                                        black
+                                    </button>
+                                    <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-900 rounded-r-md hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white" onclick="setTextColor('text-green-700')">
+                                        green
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- image panel  -->
+                <div class="relative mt-5 hidden" id="image_div">
+                    <div class="static w-[95%] h-[320px] ml-2 mr-5 bg-transparent border rounded border-violet-700">
+                        <span class="absolute top-[-10px] left-10 text-center w-[100px] h-[30px] bg-slate-300 rounded">
+                            Image
+                        </span>
+                        <span class="absolute top-[-10px] right-7 text-center w-[30px] h-[30px] bg-red-100 text-red-700 rounded-full cursor-pointer" onclick="imageCross()">x</span>
+                        <div class="p-5 mt-5">
+                            
+                            <div class="flex items-center justify-center w-full">
+                                <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-white ">
+                                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                        <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                                        </svg>
+                                        <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                                    </div>
+                                    <input id="dropzone-file" type="file" class="hidden" onChange="showimage(this)" />
+                                </label>
+                            </div> 
+    
+                        </div>
+                    </div>
+                </div>
+                <!-- description panel  -->
+                <div class="relative mt-5 hidden" id="description_div">
+                    <div class="static w-[95%] h-[160px] ml-2 mr-5 bg-transparent border rounded border-violet-700">
+                        <span class="absolute top-[-10px] left-10 text-center w-[100px] h-[30px] bg-slate-300 rounded">
+                            Description
+                        </span>
+                        <span class="absolute top-[-10px] right-7 text-center w-[30px] h-[30px] bg-red-100 text-red-700 rounded-full cursor-pointer" onclick="descriptionCross()">x</span>
+                        <div class="p-5 mt-5">
+                            <textarea id="descMessage" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Write your thoughts here..." oninput="check2(this.value)"></textarea>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-2">
+                <h1 class="text-center mt-[35px] text-xl font-medium items_text">Items</h1>
+                <div class="grid lg:grid-cols-3 gap-2 my-3 grid-cols-1" id="items_div">
+                    <button class="bg-yellow-100 hover:bg-yellow-400 text-yellow-400 hover:text-yellow-100 font-bold py-2 px-[90px] rounded" id="heading_button" onclick="showHeadingDiv()">Heading</button>
+                    <button class="bg-lime-100 hover:bg-lime-400 text-lime-400 hover:text-lime-100 font-bold py-2 px-[90px] rounded" id="image_button" onclick="showImageDiv()">Image</button>
+                    <button class="bg-blue-200 hover:bg-blue-400 text-blue-400 hover:text-blue-100 font-bold py-2 px-[90px] rounded" id="desc_button" onclick="showDescriptionDiv()">Description</button>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- preview  -->
+        <div class="relative w-1/2 h-[850px] m-1 bg-transparent border rounded border-violet-700"> 
+            <div class="absolute top-[-10px] lg:right-[60px] bg-white rounded lg:px-[300px] right-[80px] px-[80px] md:px-[40px] flex py-1"> 
+                <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+                        </svg>
+                    </span>
+                Preview
+            </div>
+            <div class="mt-5 p-5" id="download_div">
+                <h1 id="heading_prev" class="mb-5 text-5xl font-bold"></h1>
+                <div id="img-preview"></div>
+                <h1 id="desc_prev" class="mb-5 text-5xl font-bold"></h1>
+            </div>
+            <div class="absolute bottom-10 lg:right-[600px] right-[120px]">
+                <button class="bg-yellow-100 hover:bg-yellow-400 text-yellow-400 hover:text-yellow-100 font-bold py-2 p-2 rounded" onclick="downloadimage()">Download</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script type="text/javascript">
+        function showHeadingDiv(){
+            document.getElementById('heading_div')
+            var element = document.getElementById("heading_div");
+            element.classList.remove("hidden");
+            document.getElementById("items_div").classList.remove('grid-cols-3')
+            document.getElementById("items_div").classList.add('grid-cols-2')
+            document.getElementById("heading_button").classList.add('hidden')
+        }
+        function headingCross(){
+            document.getElementById('heading_div')
+            var element = document.getElementById("heading_div");
+            element.classList.add("hidden");
+            document.getElementById("items_div").classList.remove('grid-cols-2')
+            document.getElementById("items_div").classList.add('grid-cols-3')
+            document.getElementById("heading_button").classList.remove('hidden')
+            document.getElementById('heading_prev').innerText = '';
+        }
+        function showImageDiv(){
+            document.getElementById('image_div')
+            var element = document.getElementById("image_div");
+            element.classList.remove("hidden");
+            document.getElementById("items_div").classList.remove('grid-cols-3')
+            document.getElementById("items_div").classList.add('grid-cols-2')
+            document.getElementById("image_button").classList.add('hidden')
+        }
+        function imageCross(){
+            document.getElementById('image_div')
+            var element = document.getElementById("image_div");
+            element.classList.add("hidden");
+            document.getElementById("items_div").classList.remove('grid-cols-2')
+            document.getElementById("items_div").classList.add('grid-cols-3')
+            document.getElementById("image_button").classList.remove('hidden')
+            document.getElementById("img-preview").innerHTML = '';
+        }
+        function showDescriptionDiv(){
+            document.getElementById('description_div')
+            var element = document.getElementById("description_div");
+            element.classList.remove("hidden");
+            document.getElementById("items_div").classList.remove('grid-cols-3')
+            document.getElementById("items_div").classList.add('grid-cols-2')
+            document.getElementById("desc_button").classList.add('hidden')
+        }
+        function descriptionCross(){
+            document.getElementById('description_div')
+            var element = document.getElementById("description_div");
+            element.classList.add("hidden");
+            document.getElementById("items_div").classList.remove('grid-cols-2')
+            document.getElementById("items_div").classList.add('grid-cols-3')
+            document.getElementById("desc_button").classList.remove('hidden')
+            document.getElementById('desc_prev').innerText = '';
+        }
+        const source = document.getElementById('heading');
+        const result = document.getElementById('heading_prev');
+
+        //heding
+        const inputHandler = function(e) {
+            result.innerText = e.target.value;
+        }
+
+        source.addEventListener('input', inputHandler);
+        source.addEventListener('propertychange', inputHandler);
+
+        function setTextAlign(val){
+            var element = document.getElementById("heading_prev");
+            var lf = element.classList.contains("text-left");
+            var cn = element.classList.contains("text-center");
+            var rt = element.classList.contains("text-right");
+            if(lf){
+                document.getElementById("heading_prev").classList.remove('text-left')
+                document.getElementById("heading_prev").classList.add(val)
+            }else if(cn){
+                document.getElementById("heading_prev").classList.remove('text-center')
+                document.getElementById("heading_prev").classList.add(val)
+            }else if(rt){
+                document.getElementById("heading_prev").classList.remove('text-right')
+                document.getElementById("heading_prev").classList.add(val)
+            }else {
+                document.getElementById("heading_prev").classList.add(val)
+            }
+        }
+
+        function setTextColor(val){
+            var element = document.getElementById("heading_prev");
+            var bl = element.classList.contains("text-blue-700");
+            var bk = element.classList.contains("text-black");
+            var gr = element.classList.contains("text-green-700");
+            if(bl){
+                document.getElementById("heading_prev").classList.remove('text-blue-700')
+                document.getElementById("heading_prev").classList.add(val)
+            }else if(bk){
+                document.getElementById("heading_prev").classList.remove('text-black')
+                document.getElementById("heading_prev").classList.add(val)
+            }else if(gr){
+                document.getElementById("heading_prev").classList.remove('text-green-700')
+                document.getElementById("heading_prev").classList.add(val)
+            }else {
+                document.getElementById("heading_prev").classList.add(val)
+            }
+        }
+
+        //image
+        const chooseFile = document.getElementById("dropzone-file");
+        const imgPreview = document.getElementById("img-preview");
+
+        chooseFile.addEventListener("change", function () {
+            getImgData();
+        });
+
+        function getImgData() {
+            const files = chooseFile.files[0];
+            if (files) {
+                const fileReader = new FileReader();
+                fileReader.readAsDataURL(files);
+                fileReader.addEventListener("load", function () {
+                imgPreview.style.display = "block";
+                imgPreview.innerHTML = '<img src="' + this.result + '" class="mt-5 mb-5 w-full h-[400px] bg-cover" />';
+                });    
+            }
+        }
+        //textarea
+        function check2(value){
+            // alert(value);
+            console.log(value)
+            document.getElementById('desc_prev').innerText = value;
+        }
+
+        function downloadimage() {
+                /*var container = document.getElementById("image-wrap");*/ /*specific element on page*/
+                var container = document.getElementById("download_div");; /* full page */
+                html2canvas(container, { allowTaint: true }).then(function (canvas) {
+
+                    var link = document.createElement("a");
+                    document.body.appendChild(link);
+                    link.download = "html_image.jpg";
+                    link.href = canvas.toDataURL();
+                    link.target = '_blank';
+                    link.click();
+                });
+            }
+
+
+    </script>
+    
+</body>
+</html>
